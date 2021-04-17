@@ -1,0 +1,29 @@
+# create the budget class
+class budget:
+  # with category and fund as attribute  
+    def _init_(self, category, fund):
+        self.category = category
+        self.fund = fund
+    
+#create function/methods
+
+    def deposit(self, amount):
+        self.fund += amount
+        print (amount + "deposited")
+    
+    def withdraw(self, amount):
+        self.fund -= amount
+        
+    def transfer(self, category, amount):
+        if self.fund >= amount:
+            self.fund -= amount
+            category.balace += amount
+            return "successful"
+        return "failed"
+
+    def check_balance(self, category):
+        return self.fund
+#instantiate the class budget
+Food = budget()
+Clothing = budget()
+Entertainment = budget()
